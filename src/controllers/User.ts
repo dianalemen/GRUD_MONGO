@@ -6,8 +6,8 @@ const { getActiveUserLogins } = require('./../helpers');
 const User = {
   getActiveUserLogins: async (req, res) => {
     const users = await db.getUsers();
-    // const activeUserLogins = getActiveUserLogins(users);
-    res.send(users);
+    const activeUserLogins = getActiveUserLogins(users);
+    res.send(activeUserLogins);
   },
   getUserById: async (req, res) => {
     const result = await db.getUserById(req.query.id);
